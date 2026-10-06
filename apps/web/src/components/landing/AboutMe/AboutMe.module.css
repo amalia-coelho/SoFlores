@@ -1,0 +1,35 @@
+.aboutMe {
+  display: grid;
+  gap: var(--espaco-6);
+  padding: var(--espaco-12) var(--espaco-6);
+}
+
+.titulo {
+  font-size: var(--texto-xl);
+  color: var(--cor-acento);
+}
+
+.colagem {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 10rem;
+  gap: var(--espaco-3);
+}
+
+.grande {
+  grid-row: span 2;
+}
+
+.largo {
+  grid-column: span 2;
+}
+
+@media (min-width: 48rem) {
+  .colagem {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .largo {
+    grid-column: span 1;
+  }
+}

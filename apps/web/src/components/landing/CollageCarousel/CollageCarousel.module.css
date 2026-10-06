@@ -1,0 +1,25 @@
+.trilho {
+  display: flex;
+  gap: var(--espaco-3);
+  padding: var(--espaco-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+}
+
+.painel {
+  flex: 0 0 70%;
+  aspect-ratio: 3 / 5;
+  scroll-snap-align: center;
+}
+
+.preenche {
+  height: 100%;
+}
+
+@media (min-width: 48rem) {
+  .painel {
+    flex-basis: 30%;
+  }
+}

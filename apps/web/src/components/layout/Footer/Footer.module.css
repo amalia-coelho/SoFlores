@@ -1,0 +1,16 @@
+.footer {
+  display: grid;
+  justify-items: center;
+  gap: var(--espaco-6);
+  padding: var(--espaco-12) var(--espaco-6);
+  background: var(--cor-fundo-profundo);
+}
+
+.selo {
+  width: 6rem;
+  height: 6rem;
+}
+
+.copy {
+  color: var(--cor-wireframe);
+}

@@ -1,0 +1,12 @@
+.placeholder {
+  display: grid;
+  place-items: center;
+  min-height: var(--espaco-12);
+  padding: var(--espaco-2);
+  border: 1px dashed var(--cor-wireframe);
+  color: var(--cor-wireframe);
+  font-size: var(--texto-sm);
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}

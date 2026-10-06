@@ -1,0 +1,32 @@
+.hero {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: var(--espaco-8);
+  min-height: 85dvh;
+  padding: var(--espaco-6);
+}
+
+.caixa {
+  display: grid;
+  gap: var(--espaco-4);
+  width: 100%;
+  max-width: 28rem;
+  padding: var(--espaco-8) var(--espaco-6);
+  border: 1px dashed var(--cor-wireframe);
+  text-align: center;
+}
+
+.titulo {
+  font-size: var(--texto-xl);
+  color: var(--cor-acento);
+}
+
+.texto {
+  color: var(--cor-wireframe);
+}
+
+.cta {
+  width: 9rem;
+  border-radius: 999px;
+}

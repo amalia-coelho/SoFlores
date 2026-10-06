@@ -1,0 +1,7 @@
+.interlude {
+  padding: var(--espaco-6);
+}
+
+.faixa {
+  min-height: 30dvh;
+}

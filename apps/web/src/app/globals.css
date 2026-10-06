@@ -19,6 +19,8 @@
   --cor-texto: var(--marca-creme);
   --cor-acento: var(--marca-dourado);
   --cor-detalhe: var(--marca-vinho);
+   --cor-fundo-profundo: var(--marca-preto);
+  --cor-wireframe: color-mix(in srgb, var(--cor-texto) 45%, transparent);
 
   /* --- Tipografia --- */
   --fonte-titulo: var(--font-fraunces), Georgia, serif;

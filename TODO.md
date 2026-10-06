@@ -7,7 +7,7 @@
 - [x] Etapa 0 — Ambiente (Git, pnpm, Go, Docker)
 - [x] Etapa 1A — Repositório ligado ao GitHub
 - [x] Etapa 1B — Monorepo (pnpm workspaces) + app web (Next.js)
-- [ ] Etapa 1C — Docs (TODO + ADRs)
+- [x] Etapa 1C — Docs (TODO + ADRs)
 - [ ] Etapa 2 — Tokens, fontes e landing mobile
 - [ ] Etapa 3 — i18n (pt, en, es) com next-intl
 - [ ] Etapa 4 — Postgres (Docker) + API Go: coleções
