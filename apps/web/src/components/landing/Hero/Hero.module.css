@@ -2,31 +2,70 @@
   display: grid;
   justify-items: center;
   align-content: center;
-  gap: var(--espaco-8);
+  gap: var(--espaco-6);
   min-height: 85dvh;
   padding: var(--espaco-6);
-}
-
-.caixa {
-  display: grid;
-  gap: var(--espaco-4);
-  width: 100%;
-  max-width: 28rem;
-  padding: var(--espaco-8) var(--espaco-6);
-  border: 1px dashed var(--cor-wireframe);
   text-align: center;
 }
 
-.titulo {
-  font-size: var(--texto-xl);
+.sobretitulo {
+  font-size: var(--texto-sm);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
   color: var(--cor-acento);
 }
 
-.texto {
-  color: var(--cor-wireframe);
+/* Título cursivo em ouro metálico */
+.titulo {
+  max-width: 14ch;
+  padding-inline: 0.15em; /* cursivas "vazam" para os lados; evita cortar o gradiente */
+  font-family: var(--fonte-cursiva);
+  font-size: clamp(3rem, 2rem + 6vw, 6.5rem);
+  line-height: 1.05;
+  background: var(--gradiente-ouro);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 1.5rem rgb(195 140 42 / 0.35));
 }
 
+.texto {
+  max-width: 34ch;
+  color: color-mix(in srgb, var(--cor-texto) 80%, transparent);
+}
+
+.valores {
+  font-size: var(--texto-sm);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.valores span {
+  margin-inline: var(--espaco-2);
+  color: var(--cor-acento);
+}
+
+/* Botão: fio dourado que "enche" de ouro no hover */
 .cta {
-  width: 9rem;
-  border-radius: 999px;
+  margin-top: var(--espaco-4);
+  padding: var(--espaco-3) var(--espaco-8);
+  border: var(--linha-ouro);
+  color: var(--cor-acento);
+  font-size: var(--texto-sm);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  transition:
+    background-color var(--duracao-rapida) var(--curva-suave),
+    color var(--duracao-rapida) var(--curva-suave);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background-color: var(--cor-acento);
+  color: var(--cor-texto-invertido);
+}
+
+.cta:focus-visible {
+  outline: var(--linha-ouro);
+  outline-offset: 4px;
 }

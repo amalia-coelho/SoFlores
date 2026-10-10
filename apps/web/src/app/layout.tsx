@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Fraunces, Outfit, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 
 // Provisórias — substituem The Seasons e Garet (ver TODO.md)
@@ -15,6 +15,14 @@ const outfit = Outfit({
   display: "swap",
 });
 
+// Cursiva de destaque (só títulos grandes)
+const cursiva = Pinyon_Script({
+  variable: "--font-cursiva",
+  weight: "400", // fontes de peso único exigem o weight explícito
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "SoFlores — Onde a exclusividade floresce",
   description:
@@ -22,12 +30,15 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#271f17",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${outfit.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${fraunces.variable} ${outfit.variable} ${cursiva.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

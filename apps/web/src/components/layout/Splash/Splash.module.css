@@ -1,0 +1,116 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background-color: var(--cor-fundo);
+  /* Rede de segurança: se o JS falhar, some sozinho */
+  animation: sumir 600ms ease 6s forwards;
+}
+
+/* Mesmo grão do fundo do site */
+.splash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--textura-grao);
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+/* Lírio "respirando" com brilho dourado pulsante (vibe menu de DVD) */
+.flor {
+  position: relative;
+  z-index: 1;
+  width: min(12rem, 45vw);
+  animation: respirar 2.4s var(--curva-suave) infinite alternate;
+}
+
+.flor img {
+  width: 100%;
+  height: auto;
+}
+
+/* Estrelinha piscando perto da pétala de cima */
+.brilho {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 5.5rem);
+  left: calc(50% + 3.5rem);
+  color: var(--marca-creme);
+  font-size: 1.1rem;
+  animation: piscar 1.6s ease-in-out infinite;
+}
+
+/* ---------- Saída: o lírio vem na direção da tela ---------- */
+.saindo {
+  pointer-events: none; /* já deixa clicar no site */
+  animation: abrir 900ms var(--curva-suave) forwards;
+}
+
+.saindo .flor {
+  /* ease-in forte = sensação de "vir para cima" da câmera */
+  animation: aproximar 900ms cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+.saindo .brilho {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+@keyframes respirar {
+  from {
+    transform: scale(0.96);
+    filter: drop-shadow(0 0 0.5rem rgb(195 140 42 / 0.25));
+  }
+  to {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 2rem rgb(195 140 42 / 0.6));
+  }
+}
+
+@keyframes piscar {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+@keyframes aproximar {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(18);
+    opacity: 0;
+  }
+}
+
+/* Fundo segura um pouco e depois revela o site */
+@keyframes abrir {
+  0%,
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes sumir {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

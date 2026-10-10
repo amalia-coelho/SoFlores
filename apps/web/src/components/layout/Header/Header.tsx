@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Placeholder } from "@/components/ui/Placeholder/Placeholder";
+import Image from "next/image";
+import logo from "@/assets/logo/logo_minimal_recortado.png";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -9,8 +10,8 @@ export function Header() {
         ☰
       </button>
 
-      <Link href="/" aria-label="SoFlores — início">
-        <Placeholder label="Logo" className={styles.logo} />
+      <Link href="/" aria-label="SoFlores — início" className={styles.logo}>
+        <Image src={logo} alt="" priority sizes="6rem" />
       </Link>
 
       <nav aria-label="Principal" className={styles.nav}>

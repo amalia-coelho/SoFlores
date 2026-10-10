@@ -3,6 +3,7 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: var(--espaco-4) var(--espaco-6);
+  border-bottom: var(--linha-ouro); /* fio dourado separando do conteúdo */
 }
 
 .menu {
@@ -15,13 +16,23 @@
 }
 
 .logo {
-  width: var(--espaco-12);
-  height: var(--espaco-12);
-  padding: 0;
-  border-radius: 50%;
+  display: block;
+  width: clamp(4.5rem, 4rem + 2vw, 6rem);
+}
+
+.logo img {
+  width: 100%;
+  height: auto; /* a lição do lírio :) */
+}
+
+.menu,
+.nav {
+  color: var(--cor-acento);
 }
 
 .nav {
   justify-self: end;
   font-size: var(--texto-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }

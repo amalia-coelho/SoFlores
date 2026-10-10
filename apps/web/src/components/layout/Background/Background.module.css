@@ -2,8 +2,22 @@
   position: fixed;
   inset: 0;
   z-index: -1;
+  background-color: var(--cor-fundo);
 }
 
-.imagem {
-  object-fit: cover;
+/* Brilho: luz suave no topo da tela */
+.fundo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--brilho-preto);
+}
+
+/* Grão: ruído SVG em tons de cinza, por cima de tudo */
+.fundo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--textura-grao);
+  opacity: 0.14;
 }
