@@ -1,6 +1,6 @@
 export default async function Collection({
   params,
-}: PageProps<"/colecoes/[slug]">) {
+}: PageProps<"/collections/[slug]">) {
   const { slug } = await params;
 
   return (

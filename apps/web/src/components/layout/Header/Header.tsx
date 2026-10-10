@@ -14,7 +14,7 @@ export function Header() {
       </Link>
 
       <nav aria-label="Principal" className={styles.nav}>
-        <Link href="/colecoes">Coleções</Link>
+        <Link href="/collections">Coleções</Link>
       </nav>
     </header>
   );

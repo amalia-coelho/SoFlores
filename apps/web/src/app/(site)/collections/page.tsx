@@ -9,7 +9,7 @@ export default function Colecoes() {
       <ul>
         {exemplos.map((slug) => (
           <li key={slug}>
-            <Link href={`/colecoes/${slug}`}>{slug}</Link>
+            <Link href={`/collections/${slug}`}>{slug}</Link>
           </li>
         ))}
       </ul>
