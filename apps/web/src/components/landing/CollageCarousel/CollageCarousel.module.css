@@ -1,9 +1,22 @@
+.secao {
+  padding-block: var(--espaco-12);
+}
+
+.titulo {
+  padding-inline: var(--espaco-6);
+  font-family: var(--fonte-cursiva);
+  font-size: var(--texto-2xl);
+  color: var(--cor-acento);
+  text-align: center;
+}
+
 .trilho {
   display: flex;
-  gap: var(--espaco-3);
-  padding: var(--espaco-6);
+  gap: var(--espaco-4);
+  padding: var(--espaco-8) var(--espaco-6);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--espaco-6);
   scrollbar-width: none;
   list-style: none;
 }
@@ -14,8 +27,43 @@
   scroll-snap-align: center;
 }
 
-.preenche {
+/* Moldura com fio dourado; leve inclinação alternada = "colagem" */
+.moldura {
+  position: relative; /* obrigatório para o <Image fill> */
   height: 100%;
+  overflow: hidden;
+  border: var(--linha-ouro);
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.5);
+  rotate: -1.5deg;
+}
+
+.painel:nth-child(even) .moldura {
+  rotate: 1.5deg;
+}
+
+.foto {
+  object-fit: cover;
+  transition: transform var(--duracao-media) var(--curva-suave);
+}
+
+/* Legenda sobre degradê escuro para manter contraste */
+.legenda {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--espaco-12) var(--espaco-4) var(--espaco-4);
+  background: linear-gradient(transparent, rgb(0 0 0 / 0.8));
+  color: var(--cor-acento);
+  font-size: var(--texto-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Zoom só em quem tem mouse; no celular não existe hover */
+@media (hover: hover) {
+  .painel:hover .foto {
+    transform: scale(1.05);
+  }
 }
 
 @media (min-width: 48rem) {
