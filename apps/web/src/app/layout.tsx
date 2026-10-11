@@ -26,7 +26,9 @@ const cursiva = Pinyon_Script({
 export const metadata: Metadata = {
   title: "SoFlores — Onde a exclusividade floresce",
   description:
-    "Peças exclusivas em crochê, confeccionadas à mão por Sofia Furtado com fios premium.",
+  "Peças exclusivas em crochê, confeccionadas à mão por Sofia Furtado com fios premium.",
+  // TODO: remover no lançamento oficial
+  robots: { index: false, follow: false },
 };
 
 export const viewport: Viewport = {
